@@ -1,0 +1,6 @@
+[Mon, 09 Apr 18 10:36:20 +0700][ERROR] [0]: Table 'event' doesn't exist in database when dumping meta-data for Event
+
+[Mon, 09 Apr 18 13:16:35 +0700][ERROR] [1049]: SQLSTATE[HY000] [1049] Unknown database 'hw3'
+
+[Mon, 09 Apr 18 13:17:16 +0700][ERROR] [1049]: SQLSTATE[HY000] [1049] Unknown database 'hw3'
+
