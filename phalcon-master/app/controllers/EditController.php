@@ -20,7 +20,7 @@ class EditController extends ControllerBase{
     if($this->request->isPost()){
       $event_name = trim($this->request->getPost('even_name')); // รับค่าจาก form
       $event_date = trim($this->request->getPost('datepicker'));
-      $date= date('Y-m-d',strtotime($event_date));
+      $date= date('d/m/Y',strtotime($event_date));
       $event_detail = trim($this->request->getPost('detail_name')); // รับค่าจาก form
       // $event_picture = trim($this->request->getPost('photo')); // รับค่าจาก form
       $photoUpdate='';
