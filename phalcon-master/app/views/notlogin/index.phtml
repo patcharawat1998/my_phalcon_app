@@ -48,21 +48,22 @@ try{
     $stmt->bindParam(':event_name', $event_name, PDO::PARAM_STR);
     $stmt->bindParam(':event_date', $event_date, PDO::PARAM_STR);
     $stmt->execute();
-    $n=1;  
-    if($stmt->rowCount() > 0){
-        while($row = $stmt->fetch()){
+    $n=1; 
     $n="table table-dark table-striped";
     $n1="table";
     echo "<thead>";
     echo "<table class=".$n."data-toggle".$n1.">";
     echo "<tr>";
-    echo "<th> ลำดับ </th>";
-    echo "<th> ชื่อกิจกรรม </th>";
-    echo "<th> เวลา </th>";
+    echo "<th> Number </th>";
+    echo "<th> Event Name </th>";
+    echo "<th> Date </th>";
     echo "<th></th>";
     echo "<th></th>";
     echo "</tr>";
-    echo "</thead>";
+    echo "</thead>"; 
+    if($stmt->rowCount()+1 > 0){
+        while($row = $stmt->fetch()){
+    
         echo "<tr><th>" . $row['id'] . "</th><th>" . $row['event_name'] . "</th><th>". $row['event_date'] . "</th>"; 
         ?>
 <!--         echo "<dir class="."row>";
@@ -119,7 +120,6 @@ try{
     echo "</tbody>";
     echo "</table>";
     }
-    
     
 } catch(PDOException $e){
     die("ERROR: Could not prepare/execute query: $sql. " . $e->getMessage());

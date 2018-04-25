@@ -6,7 +6,7 @@
    <div class="container container-form">
       <div class="panel panel-primary">
         <div class="panel-body">
-          <form class="form-horizontal" method="post" action=""  >
+          <form method="post" action="" enctype="multipart/form-data" >
 
             <div class="form-group">
               <div class="row">
@@ -15,7 +15,7 @@
                 </div>
               </div>
               <div class="col-sm-6">
-                <input type="text" name="even_name" class="form-control" id="even_name" required>
+                <input type="text" name="even_name" class="form-control" placeholder="ชื่อกิจกรรม" id="even_name" required>
               </div>
             </div>
             <div class="form-group">
@@ -35,12 +35,13 @@
                 </head>
                 <body>
                    <div class="col-sm-6">
-                    <input name="datepicker" id="datepicker" width="280" required>
+                    <input name="date" id="date" width="280" placeholder="mm/dd/yyyy" required>
                     <br>
                   </dir>
                     <script>
-                        $('#datepicker').datepicker({
-                            uiLibrary: 'bootstrap4'
+                        $('#date').datepicker({
+                            minDate: new Date(2017, 11, 31+1),
+                            maxDate: new Date(2020, 0, 0),
                         });
                     </script>
                 </body>
@@ -56,21 +57,28 @@
                 <input type="text" name="detail_name" class="form-control" id="detail_name" required>
               </div>
             </div>
+
             <div class="form-group">
               <div class="pull-left">
                 <div class="row">
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label> ภาพกิจกรรม </label>
                 </div> 
                 <div class="col-sm-6">
-                <input type="file" class="form-control-file" id="event_picture" name="event_picture" aria-describedby="fileHelp" multiple>
+                <dir class="custom-file">
+                <input type="file" name="event_picture"  class="custom-file-input"  >
+                  <label class="custom-file-label" >Choose file</label>
+                  </div>
                 </div>
               </div>
             </div>
+
             <div class="form-group">
               <div  class="col-sm-6">
+                 <div class="pull-left">
                 <button type="submit" class="btn btn-success"> Submit </button>
                 <button type="reset" class="btn btn-danger"> Clear </button>
                 <a href="notlogin" class="btn btn-warning">Back</a>
+                </div>
               </div>
             </div>
           </form>
